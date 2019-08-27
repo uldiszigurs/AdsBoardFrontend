@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Posts from "./Posts";
-import { PostsAction } from "./Posts.Action";
+import { getAllPosts } from "./Posts.Action";
 
 const stateToProps = state => ({
   user: state.user
@@ -8,5 +8,5 @@ const stateToProps = state => ({
 
 export default connect(
   stateToProps,
-  { PostsAction }
+  { getAllPosts }
 )(Posts);

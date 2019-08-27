@@ -3,11 +3,16 @@ import { Redirect } from "react-router-dom";
 import Post from '../../components/Post';
 class Posts extends Component {
 //display spinner when loading posts
+  state = {
 
-  render() {
-    
+  };
+  componentDidMount() {
+    //this.props.getAllPosts();
+  }
+  render() { 
     return (
-      
+      <div>SOME POSTS HERE!</div>
+
     );
   }
 }

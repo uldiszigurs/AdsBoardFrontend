@@ -5,7 +5,7 @@ const Post = (props) => {
     const {category, id, username, title, description, createdAt, updatedAt} = props;
     return (
         <div className = 'container' key = {id}>
-            <ul>
+            <ul className = 'list-unstyled'>
                 <li>{category}</li>
                 <li>{username}</li>
                 <li>{title}</li>

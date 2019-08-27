@@ -10,11 +10,13 @@ const Navigation = ({ user, logout }) => {
             Home
           </Link>
         </li>
+        {!user.token ? (
         <li className='nav-item'>
           <Link to='/register' className='nav-link'>
             Registration
           </Link>
         </li>
+        ) : null}
         {!user.token ? <li className='nav-item'>
           <Link to='/login' className='nav-link'>
             Login
@@ -34,7 +36,7 @@ const Navigation = ({ user, logout }) => {
       </ul>
       {user.token ? (
         <button onClick={logout} className='btn btn-warning'>
-          Log OUT!!!!
+          Logout
         </button>
       ) : null}
     </nav>
