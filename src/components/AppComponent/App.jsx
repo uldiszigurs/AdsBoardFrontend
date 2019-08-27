@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../../pages/Home";
 import Registration from "../../pages/Registration";
 import Login from "../../pages/Login";
+import Posts from "../../pages/Posts";
 import NotificationSystem from "../NotificationComponent";
 import Navigation from "../Navigation";
 import PrivateRoute from "../PrivateRoute";
@@ -18,6 +19,7 @@ const App = ({ user, logout }) => {
         <Switch>
           <Route path='/register' component={Registration} />
           <Route path='/login' component={Login} />
+          <Route path='/posts' component={Posts} />
           <PrivateRoute path='/' component={Home} exact />
         </Switch>
       </Router>
