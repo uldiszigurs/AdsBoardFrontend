@@ -2,12 +2,13 @@
 
 ## TODO: 
 ### Components: 
-- [ ] Navigation bar
+- [X] Navigation bar
 - [ ] Post preview
 - [ ] Post
 ### Pages:
-- [ ] Register
-- [ ] Login
+- [X] Register
+- [X] Login
 - [ ] Home
-- [ ] About
 - [ ] Posts
+
+Category filter
