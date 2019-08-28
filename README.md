@@ -4,11 +4,16 @@
 ### Components: 
 - [X] Navigation bar
 - [ ] Post preview
-- [ ] Post
+- [X] Post
 ### Pages:
 - [X] Register
 - [X] Login
-- [ ] Home
-- [ ] Posts
+- [X] Home
+- [X] Posts
+- [ ] Individual post by id
+
 
 Category filter
+CRUD
+IMAGE UPLOAD
+

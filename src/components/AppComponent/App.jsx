@@ -5,6 +5,7 @@ import Home from "../../pages/Home";
 import Registration from "../../pages/Registration";
 import Login from "../../pages/Login";
 import Posts from "../../pages/Posts";
+import singlePost from "../../pages/singlePost";
 import NotificationSystem from "../NotificationComponent";
 import Navigation from "../Navigation";
 import PrivateRoute from "../PrivateRoute";
@@ -21,6 +22,7 @@ const App = ({ user, logout }) => {
           <Route path='/login' component={Login} />
           <Route path='/posts' component={Posts} />
           <PrivateRoute path='/' component={Home} exact />
+          <Route path='/post/:id' component={singlePost} />
         </Switch>
       </Router>
       <NotificationSystem />

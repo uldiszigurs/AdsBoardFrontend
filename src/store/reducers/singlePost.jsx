@@ -1,10 +1,10 @@
-const posts = (state = [], action) => {
+const singlePost = (state = [], action) => {
     switch (action.type) {
-        case "GET_ALL_POSTS" : 
+        case "GET_SINGLE_POST" : 
             return action.payload;
             
         default : return state;
     }
 }
 
-export default posts;
+export default singlePost;

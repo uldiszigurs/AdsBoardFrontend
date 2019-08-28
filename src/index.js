@@ -22,5 +22,6 @@ TODO: On post fetching - get post => after post is fetched, get its id, fetch co
 TODO: UPDATE / DELETE by ID (AUTH, validate user who requested, can delete/update own post) 
 (not sure how to deal with this as username could be obtained, and any valid token would work)
 TODO: UPLOAD IMG
+TODO: FIX RESPNOSE STATUS CODES (backend)
 
 */

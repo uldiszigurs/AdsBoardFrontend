@@ -5,6 +5,7 @@ import isRegistered from "./registration";
 import user from "./user";
 import posts from './posts';
 import userPosts from './userPosts';
+import singlePost from './singlePost';
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   isRegistered,
   posts,
   userPosts,
+  singlePost,
   user,
 //  comments,
 });
