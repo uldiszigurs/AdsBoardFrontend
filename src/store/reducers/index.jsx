@@ -4,12 +4,14 @@ import isRegistered from "./registration";
 //import comments from "./comments";
 import user from "./user";
 import posts from './posts';
+import userPosts from './userPosts';
 
 
 const rootReducer = combineReducers({
   notifications,
   isRegistered,
   posts,
+  userPosts,
   user,
 //  comments,
 });

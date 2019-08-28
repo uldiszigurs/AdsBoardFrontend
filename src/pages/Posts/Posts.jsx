@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import Post from '../../components/Post';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+
 class Posts extends Component {
 //display spinner when loading posts
   componentDidMount() {
@@ -34,5 +37,17 @@ class Posts extends Component {
     );
   }
 }
+
+Posts.propTypes = {
+  category : PropTypes.string,
+  _id : PropTypes.string,
+  username : PropTypes.string,
+  title : PropTypes.string,
+  createdAt : PropTypes.instanceOf(Date), 
+  updatedAt : PropTypes.instanceOf(Date),
+  description : PropTypes.string,
+  key : PropTypes.string
+}
+
 
 export default Posts;

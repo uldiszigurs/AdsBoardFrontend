@@ -1,5 +1,5 @@
 import axios from "axios";
-import { error } from "react-notification-system-redux";
+import { success, error } from "react-notification-system-redux";
 
 const getUserPosts = ({ token }) => dispatch => {
   axios
@@ -10,6 +10,14 @@ const getUserPosts = ({ token }) => dispatch => {
           type: "GET_USER_POSTS",
           payload: response.data.payload.posts
         });
+        dispatch(
+          success({
+            title: "Successfully fetched all user posts",
+            message: "Successfully fetched all user posts",
+            position: "tr",
+            autoDismiss: 5
+          })
+        );
       }
     })
     .catch(err => {

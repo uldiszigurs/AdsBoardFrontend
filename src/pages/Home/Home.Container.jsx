@@ -4,7 +4,7 @@ import Home from "./Home";
 
 const stateToProps = state => ({
   user: state.user,
-  userPosts: state.userposts
+  userPosts: state.userPosts
 });
 
 export default connect(
