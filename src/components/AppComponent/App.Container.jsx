@@ -6,7 +6,7 @@ const stateToProps = state => {
   return {
     user: state.user
   };
-};
+}; 
 
 export default connect(
   stateToProps,

@@ -13,7 +13,7 @@ const getSinglePost = (_id) => dispatch => {
         console.log('post : ', post);
         dispatch({ 
           type: "GET_SINGLE_POST",
-          payload: post //this is array
+          payload: [post] //this is and should be an ARRAY!
         });
 
         dispatch(
@@ -27,6 +27,7 @@ const getSinglePost = (_id) => dispatch => {
       }
     })
     .catch(err => {
+      console.log(err);
       dispatch(
         error({
           title: "Fetching single post by id has failed",

@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 const Post = (props) => {
     const {category, id, username, title, description, createdAt, updatedAt} = props;
     return (
-        <div className = 'container' key = {id}>
+        <div className = 'container-fluid' key = {id}>
+            <div className = 'row'>
+                
+            </div>
             <ul className = 'list-unstyled'>
                 <li>{category}</li>
                 <li>{username}</li>
@@ -22,7 +25,9 @@ Post.propTypes = {
     id : PropTypes.string,
     username : PropTypes.string,
     title : PropTypes.string,
-    createdAt : PropTypes.instanceOf(Date), 
-    updatedAt : PropTypes.instanceOf(Date),
+    createdAt : PropTypes.string,
+    updatedAt : PropTypes.string,
+/*     createdAt : PropTypes.instanceOf(Date), 
+    updatedAt : PropTypes.instanceOf(Date), */
 }
 export default Post;

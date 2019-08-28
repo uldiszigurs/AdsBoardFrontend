@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navigation = ({ user, logout }) => {
+const Navigation = ({ user, logout }) => { //need to provide singlePost _ID
+
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-secondary'>
       <ul className='navbar-nav mr-auto'>
+      {user.token ? (
         <li className='nav-item'>
           <Link to='/' className='nav-link'>
             Home
           </Link>
         </li>
+        ) : null}
         {!user.token ? (
         <li className='nav-item'>
           <Link to='/register' className='nav-link'>
@@ -33,6 +36,11 @@ const Navigation = ({ user, logout }) => {
             Create post
           </Link>
         </li> ) : null}
+        <li className='nav-item'>
+          <Link to={`/post/${_id}`} className='nav-link'>
+            Register
+          </Link>
+        </li>
       </ul>
       {user.token ? (
         <button onClick={logout} className='btn btn-warning'>

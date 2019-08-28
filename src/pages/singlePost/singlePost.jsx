@@ -6,20 +6,16 @@ import PropTypes from 'prop-types';
 class SinglePost extends Component {
 //display spinner when loading posts
   componentDidMount() {
-    this.props.getSinglePost(this.props._id);
-    if (this.props._id) {
-      console.log('THIS.PROPS._ID is falsy');
-      //throw new Error('THIS.PROPS._ID is falsy');
-    }
-    console.log(this.props.singlePost);
+    this.props.getSinglePost(this.props.match.params.id);
+    console.log('this.props.match.params.id = ', this.props.match.params.id);
   }
 
 
   render() { 
-    const posts = this.props.posts;
+    const post = this.props.singlePost;
     return ( 
       <React.Fragment>
-        {posts.map((item, index) => {
+        {post.map((item, index) => {
           const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
           return (
             <Post 
@@ -45,8 +41,10 @@ SinglePost.propTypes = {
   _id : PropTypes.string,
   username : PropTypes.string,
   title : PropTypes.string,
-  createdAt : PropTypes.instanceOf(Date), 
-  updatedAt : PropTypes.instanceOf(Date),
+  createdAt : PropTypes.string,
+  updatedAt : PropTypes.string,
+/*   createdAt : PropTypes.instanceOf(Date), 
+  updatedAt : PropTypes.instanceOf(Date), */
   description : PropTypes.string,
   key : PropTypes.string
 }

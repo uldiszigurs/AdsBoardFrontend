@@ -5,7 +5,7 @@ import { getSinglePost } from "./singlePost.Action";
 
 const stateToProps = state => ({
   singlePost: state.singlePost
-});
+}); 
 
 export default connect(
   stateToProps,
