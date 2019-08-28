@@ -1,23 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import image from '../image/testImage.jpeg';
+import { Link } from "react-router-dom";
 
 const Post = (props) => {
-    const {category, id, username, title, description, createdAt, updatedAt} = props;
+    const {category, _id, username, title, description, createdAt, updatedAt} = props;
+    console.log('category, id, username, title, description, createdAt, updatedAt',category, _id, username, title, description, createdAt, updatedAt);
     return (
-        <div className = 'container-fluid' key = {id}>
+        <div className = 'container-fluid' key = {_id}>
+            <Link to = {`/post/${_id}`}>{title}</Link>
             <img alt='something went wrong' src={image}/>
             <div className = 'row'>
-                
+                <ul className = 'list-unstyled'>
+                    <li>{username}</li>
+                    <li>{description}</li>
+                    <li>{category}</li>
+                    <li>{createdAt}</li>
+                    <li>{updatedAt}</li>
+                </ul>
             </div>
-            <ul className = 'list-unstyled'>
-                <li>{category}</li>
-                <li>{username}</li>
-                <li>{title}</li>
-                <li>{description}</li>
-                <li>{createdAt}</li>
-                <li>{updatedAt}</li>
-            </ul>
+            
             
         </div>
     );
