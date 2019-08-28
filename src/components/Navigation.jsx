@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navigation = ({ user, logout }) => { //need to provide singlePost _ID
-
+const Navigation = ({ user, singlePostId, logout }) => { //_ID = singlePostId TODO: CAREFUL SEQUENCE
+  const id = singlePostId;
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-secondary'>
+    <nav className='navbar navbar-expand-lg navbar-dark bg-secondary sticky-top'>
       <ul className='navbar-nav mr-auto'>
       {user.token ? (
         <li className='nav-item'>
@@ -36,11 +36,13 @@ const Navigation = ({ user, logout }) => { //need to provide singlePost _ID
             Create post
           </Link>
         </li> ) : null}
+        {id ? (
         <li className='nav-item'>
-          <Link to={`/post/${_id}`} className='nav-link'>
-            Register
+          <Link to={`/post/${id}`} className='nav-link'>
+            Last Viewed Post
           </Link>
         </li>
+        ) : null}
       </ul>
       {user.token ? (
         <button onClick={logout} className='btn btn-warning'>

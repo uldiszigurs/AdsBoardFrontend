@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Post from '../../components/Post';
 import PropTypes from 'prop-types';
 
-
+//TODO: Sometimes happens up to 5 rerenders WTF
 class SinglePost extends Component {
 //display spinner when loading posts
   componentDidMount() {

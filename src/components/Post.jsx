@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import image from '../image/testImage.jpeg';
 
 const Post = (props) => {
     const {category, id, username, title, description, createdAt, updatedAt} = props;
     return (
         <div className = 'container-fluid' key = {id}>
+            <img alt='something went wrong' src={image}/>
             <div className = 'row'>
                 
             </div>
