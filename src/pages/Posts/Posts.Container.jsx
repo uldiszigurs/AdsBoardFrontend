@@ -3,7 +3,8 @@ import Posts from "./Posts";
 import { getAllPosts } from "./Posts.Action";
 
 const stateToProps = state => ({
-  user: state.user
+  user: state.user,
+  posts: state.posts
 });
 
 export default connect(

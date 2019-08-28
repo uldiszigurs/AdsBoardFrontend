@@ -3,6 +3,9 @@ const posts = (state = [], action) => {
         case "GET_ALL_POSTS" : 
             return action.payload;
             
+        case "GET_USER_POSTS" :
+            return action.payload;
+            
         default : return state;
     }
 }

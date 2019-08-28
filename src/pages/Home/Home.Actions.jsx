@@ -1,21 +1,21 @@
 import axios from "axios";
 import { error } from "react-notification-system-redux";
 
-const getPostsList = ({ token }) => dispatch => {
+const getUserPosts = ({ token }) => dispatch => {
   axios
     .get("/api/v1/post", { headers: { authorization: `Bearer ${token}` } })
     .then(response => {
       if (response && response.status === 200) {
         dispatch({
-          type: "GET_POSTS",
-          payload: {}
+          type: "GET_USER_POSTS",
+          payload: response.data.payload.posts
         });
       }
     })
     .catch(err => {
       dispatch(
         error({
-          title: "Auth failed, check email or password",
+          title: "FETCHING USER_POSTS FAILED! ",
           message: err.response.error,
           position: "tc"
         })
@@ -23,4 +23,4 @@ const getPostsList = ({ token }) => dispatch => {
     });
 };
 
-export { getPostsList };
+export { getUserPosts };

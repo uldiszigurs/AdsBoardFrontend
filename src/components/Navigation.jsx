@@ -13,7 +13,7 @@ const Navigation = ({ user, logout }) => {
         {!user.token ? (
         <li className='nav-item'>
           <Link to='/register' className='nav-link'>
-            Registration
+            Register
           </Link>
         </li>
         ) : null}

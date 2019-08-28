@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
-import { getPostsList } from "./Home.Actions";
+import { getUserPosts } from "./Home.Actions";
 import Home from "./Home";
 
 const stateToProps = state => ({
-  user: state.user
+  user: state.user,
+  userPosts: state.userposts
 });
 
 export default connect(
   stateToProps,
-  { getPostsList }
+  { getUserPosts }
 )(Home);

@@ -6,10 +6,14 @@ const getAllPosts = () => dispatch => {
     .get("/api/v1/post")
     .then(response => {
       if (response && response.status === 200) {
-        const { posts } = response.data.payload.posts;
-        dispatch({ //this is action, object could be substituted with
+        const posts  = response.data.payload.posts;
+        if (response === undefined) {
+          console.log("WHY IS RESPONSE UNDEFINED?");
+        }
+        console.log('posts : ', posts);
+        dispatch({ //this is action object, object could be substituted with actionCreator function
           type: "GET_ALL_POSTS",
-          payload: { posts }
+          payload: posts //this is array
         });
 
         dispatch(

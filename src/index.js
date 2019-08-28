@@ -13,3 +13,14 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
+
+
+/* 
+TODO: Either have GET_USER_POSTS and GET_ALL_POSTS in one redux store key (i.e. overwriting on redirection) or 
+have seperate state for both and have option to force fetch (like clearing redux store state of both single or all posts)
+TODO: On post fetching - get post => after post is fetched, get its id, fetch comments with postId's => get image with the postId
+TODO: UPDATE / DELETE by ID (AUTH, validate user who requested, can delete/update own post) 
+(not sure how to deal with this as username could be obtained, and any valid token would work)
+TODO: UPLOAD IMG
+
+*/
