@@ -13,7 +13,7 @@ const getAllPosts = () => dispatch => {
         console.log('posts : ', posts);
         dispatch({ //this is action object, object could be substituted with actionCreator function
           type: "GET_ALL_POSTS",
-          payload: posts //this is array
+          payload: posts //this is array ALWAYS MAKE IT
         });
 
         dispatch(
@@ -29,7 +29,7 @@ const getAllPosts = () => dispatch => {
     .catch(err => {
       dispatch(
         error({
-          title: "Auth failed, check email or password",
+          title: "getAllPosts FAILED!",
           message: err.response.data.error,
           position: "tc"
         })
