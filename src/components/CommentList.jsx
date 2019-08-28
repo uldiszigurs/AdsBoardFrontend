@@ -4,6 +4,7 @@ const CommentList = ({commentList}) => {
     return (
         {commentList.map(item => {
             const {listofparams} = item;
+            
         })
         }
     );
