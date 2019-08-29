@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Post from '../../components/Post';
 import PropTypes from 'prop-types';
-
+import CommentList from '../../components/CommentList';
 //TODO: Sometimes happens up to 5 rerenders WTF
 class SinglePost extends Component {
 //display spinner when loading posts
@@ -18,17 +18,20 @@ class SinglePost extends Component {
         {post.map((item, index) => {
           const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
           return (
-            <Post 
-            category={category} 
-            createdAt={createdAt}
-            description={description}
-            title={title}
-            updatedAt={updatedAt}
-            username={username}
-            __v={__v}
-            _id={_id}
-            key={_id}
-            />
+            <React.Fragment>
+              <Post 
+              category={category} 
+              createdAt={createdAt}
+              description={description}
+              title={title}
+              updatedAt={updatedAt}
+              username={username}
+              __v={__v}
+              _id={_id}
+              key={_id}
+              />
+              <CommentList postid={this.props.match.params.id}/>
+            </React.Fragment>
           );
         }) }
       </React.Fragment>

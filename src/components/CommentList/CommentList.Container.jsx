@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
-import Posts from "./Posts";
-import { getAllPosts } from "./Posts.Action";
+import CommentList from "./CommentList";
+import { getCommentsByPostId } from "./CommentList.Action";
 
 const stateToProps = state => ({
   user: state.user,
+
 });
 
 export default connect(
   stateToProps,
-  { getAllPosts }
-)(Posts);
+  { getCommentsByPostId }
+)(CommentList);

@@ -6,19 +6,18 @@ import SingleComment from '../SingleComment';
 class CommentList extends Component {
 
   componentDidMount() {
-    this.props.getAllCommentsByPostId(this.props.postid);
-    console.log(this.props.posts);
+    this.props.getCommentsByPostId(this.props.postid);
+    console.log(this.props.comments);
   }
 
   render() { 
-    const posts = this.props.posts;
+    const comments = this.props.posts;
     return ( 
       <React.Fragment>
-        {posts.map((item, index) => {
-          const {SOMETHINGHERE} = item;
+        {comments.map((item) => {
           return (
             <SingleComment
-
+              commentBody={item}
             />
           );
         }) }

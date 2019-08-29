@@ -1,25 +1,25 @@
 import axios from "axios";
 import { success, error } from "react-notification-system-redux";
 
-const getAllPosts = () => dispatch => {
+const getCommentsByPostId = (postid) => dispatch => {
   axios
-    .get("/api/v1/post")
+    .get(`/api/v1/post/comments/${postid}`)
     .then(response => {
       if (response && response.status === 200) {
-        const posts  = response.data.payload.posts;
+        const comments  = response.data.payload.comments;
         if (response === undefined) {
           console.log("WHY IS RESPONSE UNDEFINED?");
         }
-        console.log('posts : ', posts);
+        console.log('Comments : ', comments);
         dispatch({ //this is action object, object could be substituted with actionCreator function
-          type: "GET_ALL_POSTS",
-          payload: posts //this is array ALWAYS MAKE IT
+          type: "GET_ALL_POST_COMMENTS",
+          payload: comments //this is array ALWAYS MAKE IT
         });
 
         dispatch(
           success({
-            title: "AllPostsFetched",
-            message: "AllPostsFetched",
+            title: "AllCommentsFetched",
+            message: "AllCommentsFetched",
             position: "tr",
             autoDismiss: 5
           })
@@ -29,7 +29,7 @@ const getAllPosts = () => dispatch => {
     .catch(err => {
       dispatch(
         error({
-          title: "getAllPosts FAILED!",
+          title: "getAllComments FAILED!",
           message: err.response.data.error,
           position: "tc"
         })
@@ -37,4 +37,4 @@ const getAllPosts = () => dispatch => {
     });
 };
 
-export { getAllPosts };
+export { getCommentsByPostId };
