@@ -10,10 +10,9 @@
 - [X] Login
 - [X] Home
 - [X] Posts
-- [ ] Individual post by id
+- [X] Individual post by id
+- [ ] PostsByCategory /w search
 
+Broken : addPost, addComment
 
-Category filter
-CRUD
-IMAGE UPLOAD
 

@@ -4,6 +4,7 @@ import { getCommentsByPostId } from "./CommentList.Action";
 
 const stateToProps = state => ({
   user: state.user,
+  comments: state.comments
 
 });
 

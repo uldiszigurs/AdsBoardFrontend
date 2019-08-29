@@ -5,6 +5,7 @@ const getSinglePost = (_id) => dispatch => {
   axios
     .get(`/api/v1/post/postid/${_id}`)
     .then(response => {
+      console.log('response',response);
       if (response && response.status === 200) {
         const post  = response.data.payload.post;
         if (response === undefined) {
@@ -27,7 +28,7 @@ const getSinglePost = (_id) => dispatch => {
       }
     })
     .catch(err => {
-      console.log(err);
+      console.log('ERROR = ',err);
       dispatch(
         error({
           title: "Fetching single post by id has failed",

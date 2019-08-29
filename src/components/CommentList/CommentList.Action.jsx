@@ -11,6 +11,7 @@ const getCommentsByPostId = (postid) => dispatch => {
           console.log("WHY IS RESPONSE UNDEFINED?");
         }
         console.log('Comments : ', comments);
+        console.log('Response.data : ', response.data);
         dispatch({ //this is action object, object could be substituted with actionCreator function
           type: "GET_ALL_POST_COMMENTS",
           payload: comments //this is array ALWAYS MAKE IT

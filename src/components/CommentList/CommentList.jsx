@@ -11,12 +11,12 @@ class CommentList extends Component {
   }
 
   render() { 
-    const comments = this.props.posts;
+    const comments = this.props.comments;
     return ( 
       <React.Fragment>
         {comments.map((item) => {
           return (
-            <SingleComment
+            <SingleComment key = {item._id}
               commentBody={item}
             />
           );

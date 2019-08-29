@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Post from '../../components/Post';
 import PropTypes from 'prop-types';
-import CommentList from '../../components/CommentList';
-//TODO: Sometimes happens up to 5 rerenders WTF
+import CommentList from '../../components/CommentList/index';
 class SinglePost extends Component {
 //display spinner when loading posts
   componentDidMount() {
@@ -30,7 +29,7 @@ class SinglePost extends Component {
               _id={_id}
               key={_id}
               />
-              <CommentList postid={this.props.match.params.id}/>
+              <CommentList postid={_id}/>
             </React.Fragment>
           );
         }) }
