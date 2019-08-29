@@ -6,11 +6,11 @@ const loginUser = user => dispatch => {
     .post("/api/v1/authentication/login", user)
     .then(response => {
       if (response && response.status === 200) {
-        const { token } = response.data.payload;
+        const { token, username } = response.data.payload;
         localStorage.setItem("user", token);
         dispatch({
           type: "LOGIN_SUCCESS",
-          payload: { token }
+          payload: { token, username }
         });
 
         dispatch(
