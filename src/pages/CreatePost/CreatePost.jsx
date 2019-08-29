@@ -32,7 +32,7 @@ class AddPost extends Component {
   render() {
     const { createdPostId } = this.props;
     if (createdPostId) {
-      return <Redirect to={`/posts/${createdPostId}`}/>;
+      return <Redirect to={`/post/${createdPostId}`}/>;
     } 
     return (
       <form onSubmit={this.onSubmit}>

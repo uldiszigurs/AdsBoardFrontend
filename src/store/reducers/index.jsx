@@ -6,7 +6,7 @@ import user from "./user";
 import posts from './posts';
 import userPosts from './userPosts';
 import singlePost from './singlePost';
-import createpost from './createpost';
+import createdPostId from './createdPostId';
 
 
 const rootReducer = combineReducers({
@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
   posts,
   userPosts,
   comments,
-  createpost,
+  createdPostId,
   singlePost,
   user,
 //  comments,
