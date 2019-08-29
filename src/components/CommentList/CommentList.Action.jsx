@@ -37,5 +37,20 @@ const getCommentsByPostId = (postid) => dispatch => {
       );
     });
 };
+const addComment = ( token , username, postid, message) => dispatch => { /////////////////////TODO: careful, need to update state right away.
+  axios
+    .post(`/api/v1/post/comments/${postid}`, {"message": message, "username": username}, {
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      if (response && response.status === 201) {
+        dispatch({
+          type: "ADD_COMMENT"
+        });
+      }
+    });
+};
 
-export { getCommentsByPostId };
+export { getCommentsByPostId, addComment };
