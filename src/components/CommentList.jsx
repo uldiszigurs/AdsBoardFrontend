@@ -1,12 +1,15 @@
 import React from 'react';
 
-const CommentList = ({commentList}) => {
+const CommentList = (props) => {
+    const {commentList} = props;
     return (
-        {commentList.map(item => {
-            const {listofparams} = item;
+        <React.Fragment>
+            {commentList.map(item => {
+            const {_id,username,message,createdAt,updatedAt} = item;
             
-        })
-        }
+            })
+            }
+        </React.Fragment>
     );
 };
 

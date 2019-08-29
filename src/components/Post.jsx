@@ -7,18 +7,21 @@ const Post = (props) => {
     const {category, _id, username, title, description, createdAt, updatedAt} = props;
     console.log('category, id, username, title, description, createdAt, updatedAt',category, _id, username, title, description, createdAt, updatedAt);
     return (
-        <div className = 'container-fluid' key = {_id}>
-            <Link to = {`/post/${_id}`}>{title}</Link>
-            <img alt='something went wrong' src={image}/>
-            <div className = 'row'>
-                <ul className = 'list-unstyled'>
-                    <li>{username}</li>
-                    <li>{description}</li>
-                    <li>{category}</li>
-                    <li>{createdAt}</li>
-                    <li>{updatedAt}</li>
-                </ul>
+        <div className = 'container border border-success' key = {_id}>
+            <div className="row m-2">
+                <div className = 'col'>
+                    <img alt='something went wrong' src={image}/>
+                </div>
+                <div className = 'col'>
+                    <div className = 'p-2'><Link to = {`/post/${_id}`}>{title}</Link></div>
+                    <div className = 'p-2'>Posted by user : {username}</div>
+                    <div className = 'p-2'>Description : {description}</div>
+                    <div className = 'p-2'>Category : {category}</div>
+                    {/* <div className = 'p-2'>{createdAt}</div>
+                    <div className = 'p-2'>{updatedAt}</div> */}
+                </div>
             </div>
+            
             
             
         </div>
