@@ -1,9 +1,9 @@
 import axios from "axios";
 import { success, error } from "react-notification-system-redux";
 
-const getUserPosts = ({ token }) => dispatch => {
+const getUserPosts = (token, username) => dispatch => {
   axios
-    .get("/api/v1/post", { headers: { authorization: `Bearer ${token}` } })
+    .get(`/api/v1/post/users/${username}`, { headers: { authorization: `Bearer ${token}` } })
     .then(response => {
       if (response && response.status === 200) {
         dispatch({

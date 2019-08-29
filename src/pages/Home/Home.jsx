@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getUserPosts(this.props.user.token);
+    this.props.getUserPosts(this.props.user.token, this.props.user.username);
     console.log(this.props.userPosts);
   }
 

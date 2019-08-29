@@ -2,13 +2,26 @@ import React, { Component } from "react";
 import Post from '../../components/Post';
 import PropTypes from 'prop-types';
 import CommentList from '../../components/CommentList/index';
+import PostComment from '../../components/PostComment';
 class SinglePost extends Component {
+  state = {
+
+  }
 //display spinner when loading posts
   componentDidMount() {
     this.props.getSinglePost(this.props.match.params.id);
     console.log('this.props.match.params.id = ', this.props.match.params.id);
   }
 
+  onChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+    console.log(this.state);
+  };
+
+  onSubmit = event => {
+    
+  }
 
   render() { 
     const post = this.props.singlePost;
@@ -32,7 +45,8 @@ class SinglePost extends Component {
               <CommentList postid={_id}/>
             </React.Fragment>
           );
-        }) }
+        })}
+        <PostComment/>
       </React.Fragment>
     );
   }

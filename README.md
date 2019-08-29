@@ -8,11 +8,11 @@
 ### Pages:
 - [X] Register
 - [X] Login
-- [X] Home (All posts by user)
+- [X] Home (All posts by user) FAULTY atm (fetches all posts)
 - [X] Posts
 - [X] Individual post by id
 - [ ] PostsByCategory /w search
 
-Broken : addPost, addComment
+
 
 
