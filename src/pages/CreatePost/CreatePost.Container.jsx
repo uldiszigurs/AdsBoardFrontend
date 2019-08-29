@@ -5,7 +5,8 @@ import { createPost } from "./CreatePost.Action";
 const stateToProps = state => {
   return {
     user: state.user,
-    isCreated: state.createPost
+    createdPostId: state.createdPostId
+    
   };
 };
 

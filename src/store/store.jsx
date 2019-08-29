@@ -18,6 +18,7 @@ axios.interceptors.response.use(
 
     if (error.response.status === 401) {
       localStorage.removeItem("user");
+      localStorage.removeItem("username");
       store.dispatch({
         type: "LOGOUT"
       });
@@ -36,11 +37,12 @@ axios.interceptors.response.use(
 );
 
 const savedUser = localStorage.getItem("user");
+const username = localStorage.getItem("username");
 
 if (savedUser) {
   store.dispatch({
     type: "LOGIN_SUCCESS",
-    payload: { token: savedUser }
+    payload: { token: savedUser, username : username }
   });
 }
 

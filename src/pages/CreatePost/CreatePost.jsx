@@ -12,24 +12,28 @@ class AddPost extends Component {
   onChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+    console.log(this.state);
   };
 
   onSubmit = event => {
     event.preventDefault();
     const media = this.fileInput.current.files[0];
+    console.log('media = ', media);
     if (!media) {
       console.log("Media is required");
       return;
     }
-    const { text } = this.state;
-    this.props.addPost(this.props.user, { text, media });
+    const { description, title, category } = this.state; //token, media, username, title, description, category
+    console.log('this.props.user.username = ', this.props.user);
+    console.log('createPost arguments',this.props.user.token, media, this.props.user.username, title, description, category);
+    this.props.createPost(this.props.user.token, media, this.props.user.username, title, description, category);
   };
 
   render() {
-    const { isCreated } = this.props;
-    if (isCreated._id) {
-      return <Redirect to={`/posts/${isCreated._id}`} />;
-    }
+    const { createdPostId } = this.props;
+    if (createdPostId) {
+      return <Redirect to={`/posts/${createdPostId}`}/>;
+    } 
     return (
       <form onSubmit={this.onSubmit}>
         <div className='form-group'>

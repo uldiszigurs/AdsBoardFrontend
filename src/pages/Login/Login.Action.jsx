@@ -8,6 +8,7 @@ const loginUser = user => dispatch => {
       if (response && response.status === 200) {
         const { token, username } = response.data.payload;
         localStorage.setItem("user", token);
+        localStorage.setItem("username", username);
         dispatch({
           type: "LOGIN_SUCCESS",
           payload: { token, username }
