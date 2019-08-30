@@ -18,20 +18,21 @@ class AddPost extends Component {
   onSubmit = event => {
     event.preventDefault();
     const media = this.fileInput.current.files[0];
-    console.log('media = ', media);
+    //console.log('media = ', media);
     if (!media) {
       console.log("Media is required");
       return;
     }
     const { description, title, category } = this.state; //token, media, username, title, description, category
-    console.log('this.props.user.username = ', this.props.user);
-    console.log('createPost arguments',this.props.user.token, media, this.props.user.username, title, description, category);
+    //console.log('this.props.user.username = ', this.props.user);
+    //console.log('createPost arguments',this.props.user.token, media, this.props.user.username, title, description, category);
     this.props.createPost(this.props.user.token, media, this.props.user.username, title, description, category);
   };
 
   render() {
     const { createdPostId } = this.props;
     if (createdPostId) {
+      this.props.clearCreatedPostId(); //TODO: CAREFUL! could set timeout and execute this :D 
       return <Redirect to={`/post/${createdPostId}`}/>;
     } 
     return (

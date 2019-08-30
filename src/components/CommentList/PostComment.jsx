@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; //TODO: ADD PROPTYPES
 
 
 const PostComment = (props) => {
-  console.log(props);
+  //console.log(props);
   const {onSubmit,onChange} = props;
     return (
       <form onSubmit={onSubmit}>

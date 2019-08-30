@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CreatePost from "./CreatePost";
-import { createPost } from "./CreatePost.Action";
+import { createPost, clearCreatedPostId } from "./CreatePost.Action";
 
 const stateToProps = state => {
   return {
@@ -12,5 +12,5 @@ const stateToProps = state => {
 
 export default connect(
   stateToProps,
-  { createPost }
+  { createPost, clearCreatedPostId }
 )(CreatePost);

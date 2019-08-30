@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Post from '../../components/Post';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   componentDidMount() {
@@ -12,6 +13,15 @@ class Home extends Component {
     const userPosts = this.props.userPosts; //FIXME: CAREFUL
     return ( // DRY : whole render code block could be another component, currently used in two pages
       <React.Fragment>
+        <h4>Here you can see your posts.(this is private route)</h4>
+        {(userPosts.length === 0) ? (
+          <div>
+            <p>Looks like you don't have any posts, click link below to create one.</p>
+            <Link to='/createpost' className=''>
+            Create post
+            </Link> 
+          </div>
+          ) : null}
         {userPosts.map((item) => {
           const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
           return (

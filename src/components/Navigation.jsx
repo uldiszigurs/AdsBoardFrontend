@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navigation = ({ user, singlePostId, logout }) => { //_ID = singlePostId TODO: CAREFUL SEQUENCE
+const Navigation = ({ user, singlePostId, category, logout }) => { //_ID = singlePostId TODO: CAREFUL SEQUENCE
   const id = singlePostId;
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-secondary sticky-top'>

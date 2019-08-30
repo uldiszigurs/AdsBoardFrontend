@@ -17,6 +17,7 @@ class Posts extends Component {
     const posts = this.props.posts;
     return ( 
       <React.Fragment>
+        <h4>Here you can see all posts from all users!</h4>
         {posts.map((item, index) => {
           const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
           return (

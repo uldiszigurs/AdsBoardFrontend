@@ -37,4 +37,5 @@ const getAllPosts = () => dispatch => {
     });
 };
 
-export { getAllPosts };
+
+export { getAllPosts};

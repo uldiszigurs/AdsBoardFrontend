@@ -12,7 +12,7 @@ const getCommentsByPostId = (postid) => dispatch => {
         }
         console.log('Comments : ', comments);
         console.log('Response.data : ', response.data);
-        dispatch({ //this is action object, object could be substituted with actionCreator function
+        dispatch({ 
           type: "GET_ALL_POST_COMMENTS",
           payload: comments //this is array ALWAYS MAKE IT
         });
@@ -47,7 +47,8 @@ const addComment = ( token , username, postid, message) => dispatch => { ///////
     .then(response => {
       if (response && response.status === 201) {
         dispatch({
-          type: "ADD_COMMENT"
+          type: "ADD_COMMENT",
+          payload: [{message,username,postid}]
         });
       }
     });

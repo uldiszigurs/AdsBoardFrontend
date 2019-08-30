@@ -14,11 +14,11 @@ import PrivateRoute from "../PrivateRoute";
 
 
 
-const App = ({ user, singlePostId, logout }) => {
+const App = ({ user, singlePostId, category, logout }) => {
   return (
     <Fragment>
       <Router>
-        <Navigation user={user} singlePostId = {singlePostId} logout={logout} />
+        <Navigation user={user} singlePostId = {singlePostId} category={category} logout={logout} />
         <Switch>
           <Route path='/register' component={Registration} />
           <Route path='/login' component={Login} />
