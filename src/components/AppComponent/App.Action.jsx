@@ -4,6 +4,10 @@ const logout = () => dispatch => {
   dispatch({
     type: "LOGOUT"
   });
+ 
+  dispatch({
+    type: "CLEAR_USER_POSTS"
+  });
 };
 
 export default logout;

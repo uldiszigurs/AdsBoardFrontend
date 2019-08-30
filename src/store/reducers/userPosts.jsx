@@ -3,7 +3,8 @@ const userPosts = (state = [], action) => {
 
         case "GET_USER_POSTS" :
             return action.payload;
-            
+        case "CLEAR_USER_POSTS" :
+                return [];
         default : return state;
     }
 }

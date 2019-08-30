@@ -18,6 +18,10 @@ state = {
     this.setState({ [name]: value });
   };
 
+  clearForm = () =>{
+    this.setState({message:''});
+  }
+
   onSubmit = event => {
     event.preventDefault();
     if (!this.state.message) {console.log('must not be null'); return};
@@ -29,10 +33,11 @@ state = {
     const createdAt= `${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDay()}T${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}.${dateObj.getUTCMilliseconds()}Z`;
    // `${dateObj.getDay()}/${dateObj.getMonth()}/${dateObj.getFullYear()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
     const updatedAt = createdAt;
-    this.props.addComment(this.props.user.token, this.props.user.username, this.props.postid, this.state.message, createdAt, createdAt);
-    this.setState({message:''});
-    //console.log('this.state = ', this.state);
+    this.props.addComment(this.props.user.token, this.props.user.username, this.props.postid, this.state.message, createdAt, updatedAt);
+    this.clearForm();
+    
   };
+
 
   render() { 
     const comments = this.props.comments;

@@ -17,7 +17,7 @@ class CategoryPosts extends Component {
   };
 
   onSubmit = event => {
-    event.preventDefault();
+    //event.preventDefault();
     if (this.state.category.length < 1) {
       console.log("Must be not null!");
       return;

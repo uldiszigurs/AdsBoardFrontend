@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import image from '../image/testImage.jpeg';
+import image from '../image/imageNotAvailable.jpg';
 import { Link } from "react-router-dom";
 
 const Post = (props) => {
