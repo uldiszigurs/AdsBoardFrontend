@@ -14,9 +14,10 @@ class Login extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    for (const key in this.state) {
+    let key;
+    for (key in this.state) {
       if (this.state[key].length < 1) {
-        console.log("All fields required");
+        console.log("All fields required", key);
         return false;
       }
     }

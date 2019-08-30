@@ -4,7 +4,7 @@ import image from '../image/imageNotAvailable.jpg';
 import { Link } from "react-router-dom";
 
 const Post = (props) => {
-    const {category, _id, username, title, description, createdAt, updatedAt} = props;
+    const {category, _id, username, title, description, createdAt} = props;
     //console.log('category, id, username, title, description, createdAt, updatedAt',category, _id, username, title, description, createdAt, updatedAt);
     return (
         <div className = 'container border border-success' key = {_id}>
@@ -17,8 +17,8 @@ const Post = (props) => {
                     <div className = 'p-2'>Posted by user : {username}</div>
                     <div className = 'p-2'>Description : {description}</div>
                     <div className = 'p-2'>Category : {category}</div>
-                    {/* <div className = 'p-2'>{createdAt}</div>
-                    <div className = 'p-2'>{updatedAt}</div> */}
+                     <div className = 'p-2'>CreatedAt : {createdAt}</div>
+                    {/*<div className = 'p-2'>{updatedAt}</div> */}
                 </div>
             </div>
             

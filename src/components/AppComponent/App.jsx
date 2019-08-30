@@ -10,6 +10,8 @@ import singlePost from "../../pages/singlePost";
 import NotificationSystem from "../NotificationComponent";
 import Navigation from "../Navigation";
 import PrivateRoute from "../PrivateRoute";
+import CategoryPosts from "../../pages/CategoryPosts/CategoryPosts";
+import CategoryPostsForm from "../CategoryPostsForm";
 
 
 
@@ -21,9 +23,11 @@ const App = ({ user, singlePostId, category, logout }) => {
         <Navigation user={user} singlePostId = {singlePostId} category={category} logout={logout} />
         <Switch>
           <Route path='/register' component={Registration} />
+          <Route path='/category/:category' component={CategoryPosts} />
           <Route path='/login' component={Login} />
           <Route path='/posts' component={Posts} />
           <Route path='/createpost' component={CreatePost} />
+          <Route path='/category' component={CategoryPostsForm} />
           <PrivateRoute path='/' component={Home} exact />
           <Route path='/post/:id' component={singlePost} />
         </Switch>

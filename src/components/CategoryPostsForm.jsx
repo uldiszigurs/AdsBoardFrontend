@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types'; //TODO: ADD PROPTYPES
 
 
 const CategoryPostsForm = (props) => {
-  console.log(props);
+  //console.log(props);
   const {onSubmit,onChange} = props;
     return (
       <form onSubmit={onSubmit}>

@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types'; //TODO: ADD PROPTYPES
-
 
 const PostComment = (props) => {
   //console.log(props);

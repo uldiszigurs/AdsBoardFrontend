@@ -15,7 +15,8 @@ class Registration extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    for (const key in this.state) {
+    let key;
+    for (key in this.state) {
       if (this.state[key].length < 1) {
         console.log("All fields required");
         return false;

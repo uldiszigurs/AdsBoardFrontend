@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const SingleComment = (props) => {
     //console.log('PROPS = ', props);
     const {_id, postid, username, message, createdAt, updatedAt} = props.commentBody;
+    if (postid === null) {console.log('postid is null');}
     return (
         <div key = {_id} className = 'border border-info m-2'>
             <div>Comment : {message}</div>

@@ -4,7 +4,8 @@ import CategoryPosts from "./CategoryPosts";
 
 const stateToProps = state => ({
   user: state.user,
-  categoryPosts: state.categoryPosts
+  categoryPosts: state.categoryPosts,
+  category: state.category
 });
 
 export default connect(
