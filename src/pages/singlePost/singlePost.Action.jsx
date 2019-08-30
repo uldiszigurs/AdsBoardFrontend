@@ -5,13 +5,13 @@ const getSinglePost = (_id) => dispatch => {
   axios
     .get(`/api/v1/post/postid/${_id}`)
     .then(response => {
-      console.log('response',response);
+      //console.log('response',response);
       if (response && response.status === 200) {
         const post  = response.data.payload.post;
         if (response === undefined) {
           console.log("WHY IS RESPONSE UNDEFINED?");
         }
-        console.log('post : ', post);
+        //console.log('post : ', post);
         dispatch({ 
           type: "GET_SINGLE_POST",
           payload: [post] //this is and should be an ARRAY!

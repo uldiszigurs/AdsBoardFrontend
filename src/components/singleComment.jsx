@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SingleComment = (props) => {
-    console.log('PROPS = ', props);
+    //console.log('PROPS = ', props);
     const {_id, postid, username, message, createdAt, updatedAt} = props.commentBody;
     return (
         <div key = {_id} className = ''>

@@ -6,7 +6,7 @@ class SinglePost extends Component {
 //display spinner when loading posts
   componentDidMount() {
     this.props.getSinglePost(this.props.match.params.id);
-    console.log('this.props.match.params.id = ', this.props.match.params.id);
+    //console.log('this.props.match.params.id = ', this.props.match.params.id);
   }
 
   render() { 
@@ -15,6 +15,7 @@ class SinglePost extends Component {
       <React.Fragment>
         {post.map((item, index) => {
           const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
+          const dateObj = new Date();
           return (
             <React.Fragment>
               <Post 
@@ -26,9 +27,9 @@ class SinglePost extends Component {
               username={username}
               __v={__v}
               _id={_id}
-              key={_id}
+              key={`${_id}_${index}`} //HOTFIX unique props :D Dirty way, same below
               />
-              <CommentList postid={_id}/>
+              <CommentList postid={_id} key = {`${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDay()}T${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}.${dateObj.getUTCMilliseconds()}Z${index}`}/>
             </React.Fragment>
           );
         })}

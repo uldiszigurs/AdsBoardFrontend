@@ -9,7 +9,7 @@ class Posts extends Component {
 //display spinner when loading posts
   componentDidMount() {
     this.props.getAllPosts();
-    console.log(this.props.posts);
+    //console.log(this.props.posts);
   }
 
 //TODO: LINK TO INDIVIDUAL POST.

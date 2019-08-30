@@ -22,18 +22,25 @@ class CommentList extends Component {
       console.log("Must be at least 5 characters");
       return;
     }
-
-    this.props.addComment(this.props.user.token, this.props.user.username, this.props.postid, this.state.message);
-    console.log('this.state = ', this.state);
+    const dateObj = new Date();
+    const createdAt= `${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDay()}T${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}.${dateObj.getUTCMilliseconds()}Z`;
+   // `${dateObj.getDay()}/${dateObj.getMonth()}/${dateObj.getFullYear()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
+    const updatedAt = createdAt;
+    this.props.addComment(this.props.user.token, this.props.user.username, this.props.postid, this.state.message, createdAt, createdAt);
+    //console.log('this.state = ', this.state);
   };
 
   render() { 
     const comments = this.props.comments;
+    //HOTFIX DIRTY for unique keys
+    
+
     return ( 
       <React.Fragment>
-        {comments.map((item) => {
+        {comments.map((item, index) => {
+          const dateObj = new Date();
           return (
-            <SingleComment key = {item._id}
+            <SingleComment key = {`${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDay()}T${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}.${dateObj.getUTCMilliseconds()}Z${index}`}
               commentBody={item}
             />
           );

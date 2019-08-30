@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class Home extends Component {
   componentDidMount() {
     this.props.getUserPosts(this.props.user.token, this.props.user.username);
-    console.log(this.props.userPosts);
+    //console.log(this.props.userPosts);
   }
 
   render() { 

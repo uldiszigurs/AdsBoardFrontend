@@ -3,7 +3,7 @@ const comments = (state = [], action) => {
     case "GET_ALL_POST_COMMENTS":
       return action.payload;
     case "ADD_COMMENT":
-      return [...state, { isSuccess: true }];
+      return [...state].concat(action.payload); //      return [...state, { isSuccess: true }];
     default:
       return state;
   }

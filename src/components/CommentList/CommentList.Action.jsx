@@ -10,8 +10,8 @@ const getCommentsByPostId = (postid) => dispatch => {
         if (response === undefined) {
           console.log("WHY IS RESPONSE UNDEFINED?");
         }
-        console.log('Comments : ', comments);
-        console.log('Response.data : ', response.data);
+        //console.log('Comments : ', comments);
+        //console.log('Response.data : ', response.data);
         dispatch({ 
           type: "GET_ALL_POST_COMMENTS",
           payload: comments //this is array ALWAYS MAKE IT
@@ -37,7 +37,7 @@ const getCommentsByPostId = (postid) => dispatch => {
       );
     });
 };
-const addComment = ( token , username, postid, message) => dispatch => { /////////////////////TODO: careful, need to update state right away.
+const addComment = ( token , username, postid, message, createdAt, updatedAt) => dispatch => { /////////////////////TODO: careful, need to update state right away.
   axios
     .post(`/api/v1/post/comments/${postid}`, {"message": message, "username": username}, {
       headers: {
@@ -48,7 +48,7 @@ const addComment = ( token , username, postid, message) => dispatch => { ///////
       if (response && response.status === 201) {
         dispatch({
           type: "ADD_COMMENT",
-          payload: [{message,username,postid}]
+          payload: [{message,username,postid,createdAt, updatedAt}]
         });
       }
     });

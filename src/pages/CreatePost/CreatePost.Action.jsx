@@ -3,7 +3,7 @@ import axios from "axios";
 
 const createPost = (token, media, username, title, description, category) => async dispatch => {
   let postid;
-  console.log('token = ', token, 'media = ', media, 'username =', username, 'title = ',title, 'description = ', description, 'category = ', category);
+  //console.log('token = ', token, 'media = ', media, 'username =', username, 'title = ',title, 'description = ', description, 'category = ', category);
   await axios.post(`/api/v1/post`, 
       {
         username,
@@ -31,7 +31,7 @@ const createPost = (token, media, username, title, description, category) => asy
       }
     });
      
-    console.log('POSTID ======', postid);
+    //console.log('POSTID ======', postid);
   const formData = new FormData();
   formData.append("media", media);
   formData.append("username", username);

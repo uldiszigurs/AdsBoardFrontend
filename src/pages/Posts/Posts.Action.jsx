@@ -10,7 +10,7 @@ const getAllPosts = () => dispatch => {
         if (response === undefined) {
           console.log("WHY IS RESPONSE UNDEFINED?");
         }
-        console.log('posts : ', posts);
+        //console.log('posts : ', posts);
         dispatch({ //this is action object, object could be substituted with actionCreator function
           type: "GET_ALL_POSTS",
           payload: posts //this is array ALWAYS MAKE IT
