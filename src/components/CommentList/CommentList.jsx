@@ -5,10 +5,12 @@ import PostComment from './PostComment';
 
 
 class CommentList extends Component {
-
+state = {
+  message : ''
+}
   componentDidMount() {
     this.props.getCommentsByPostId(this.props.postid);
-    console.log(this.props.comments);
+    //console.log(this.props.comments);
   }
 
   onChange = event => {
@@ -18,6 +20,7 @@ class CommentList extends Component {
 
   onSubmit = event => {
     event.preventDefault();
+    if (!this.state.message) {console.log('must not be null'); return};
     if (this.state.message.length < 5) {
       console.log("Must be at least 5 characters");
       return;
@@ -27,6 +30,7 @@ class CommentList extends Component {
    // `${dateObj.getDay()}/${dateObj.getMonth()}/${dateObj.getFullYear()} ${dateObj.getHours()}:${dateObj.getMinutes()}`;
     const updatedAt = createdAt;
     this.props.addComment(this.props.user.token, this.props.user.username, this.props.postid, this.state.message, createdAt, createdAt);
+    this.setState({message:''});
     //console.log('this.state = ', this.state);
   };
 

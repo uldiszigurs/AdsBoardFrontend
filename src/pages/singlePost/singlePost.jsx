@@ -16,8 +16,9 @@ class SinglePost extends Component {
         {post.map((item, index) => {
           const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
           const dateObj = new Date();
+          //TODO: FIXME: Dirty hotfix for keys, doesnt even work...
           return (
-            <React.Fragment>
+            <React.Fragment> 
               <Post 
               category={category} 
               createdAt={createdAt}
@@ -27,7 +28,7 @@ class SinglePost extends Component {
               username={username}
               __v={__v}
               _id={_id}
-              key={`${_id}_${index}`} //HOTFIX unique props :D Dirty way, same below
+              key={`_${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDay()}T${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}.${dateObj.getUTCMilliseconds()}Z_${index}`} //HOTFIX unique props :D Dirty way, same below
               />
               <CommentList postid={_id} key = {`${dateObj.getFullYear()}-${dateObj.getMonth()}-${dateObj.getDay()}T${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}.${dateObj.getUTCMilliseconds()}Z${index}`}/>
             </React.Fragment>

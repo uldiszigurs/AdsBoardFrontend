@@ -5,7 +5,7 @@ const SingleComment = (props) => {
     //console.log('PROPS = ', props);
     const {_id, postid, username, message, createdAt, updatedAt} = props.commentBody;
     return (
-        <div key = {_id} className = ''>
+        <div key = {_id} className = 'border border-info m-2'>
             <div>Comment : {message}</div>
             <div>By : {username}</div>
             <div>Created at : {createdAt}</div>

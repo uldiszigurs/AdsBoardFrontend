@@ -22,6 +22,7 @@ class CategoryPosts extends Component {
       console.log("Must be not null!");
       return;
     }
+    this.props.getCategoryPosts(this.props.user.token, this.state.category);
   }
 
   render() { 
