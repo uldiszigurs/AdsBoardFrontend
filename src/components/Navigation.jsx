@@ -43,7 +43,13 @@ const Navigation = ({ user, singlePostId, logout }) => { //_ID = singlePostId TO
           </Link>
         </li>
         ) : null}
+        <li className='nav-item'>
+          <Link to='/category' className='nav-link'>
+            CategoryPosts
+          </Link>
+        </li>
       </ul>
+      
       {user.token ? (
         <button onClick={logout} className='btn btn-warning'>
           Logout

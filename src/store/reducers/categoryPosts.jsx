@@ -1,11 +1,10 @@
-const userPosts = (state = [], action) => {
+const categoryPosts = (state = [], action) => {
     switch (action.type) {
-
-        case "GET_USER_POSTS" :
+        case "GET_CATEGORY_POSTS" :
             return action.payload;
             
         default : return state;
     }
 }
 
-export default userPosts;
+export default categoryPosts;

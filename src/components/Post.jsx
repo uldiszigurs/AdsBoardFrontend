@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Post = (props) => {
     const {category, _id, username, title, description, createdAt, updatedAt} = props;
-    console.log('category, id, username, title, description, createdAt, updatedAt',category, _id, username, title, description, createdAt, updatedAt);
+    //console.log('category, id, username, title, description, createdAt, updatedAt',category, _id, username, title, description, createdAt, updatedAt);
     return (
         <div className = 'container border border-success' key = {_id}>
             <div className="row m-2">
