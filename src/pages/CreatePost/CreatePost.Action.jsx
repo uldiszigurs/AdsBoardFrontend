@@ -18,7 +18,7 @@ const createPost = (token, media, username, title, description, category) => asy
       }
     )
     .then(response => {
-      if (response && response.status === 200) {
+      if (response && response.status === 201) {
         console.log('response.data.payload.savedDocument._id', response.data.payload.savedDocument._id);
         console.log('response.data.payload.savedDocument', response.data.payload.savedDocument);
         console.log('response.data.payload', response.data.payload);
