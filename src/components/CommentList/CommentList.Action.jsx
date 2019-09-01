@@ -14,7 +14,7 @@ const getCommentsByPostId = (postid) => dispatch => {
         //console.log('Response.data : ', response.data);
         dispatch({ 
           type: "GET_ALL_POST_COMMENTS",
-          payload: comments //this is array ALWAYS MAKE IT
+          payload: comments //this is array ALWAYS MAKE 
         });
 
         dispatch(

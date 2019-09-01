@@ -5,7 +5,7 @@ How to run :
 Make sure backend is running. https://github.com/uldiszigurs/AdsBoardBackend 
 
 Known issues :  ()
-- image uploading to frontend from backend is not working (this is backend fault, currently have hotfix of constant image)
+- image uploading to frontend from backend is not working (this is backend's fault, currently have hotfix : use one image which is provided in /src/image/)
 - singlePost is being rendered additional time, also comments are being fetched twice (need to check state & async related functions to that state)
 - commment form field is not being resetted after sumbitting the comment (could create ref and .reset())
 - category posts section is not working properly (works from PostMan, fetching at least)

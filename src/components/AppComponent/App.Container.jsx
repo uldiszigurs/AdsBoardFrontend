@@ -13,8 +13,8 @@ const stateToProps = state => {//check if user has viewed a single post before, 
   }
   return {
     user: state.user,
-    category : state.category,
-    singlePostId : postId
+    singlePostId : postId,
+    category : state.category
   };
 }; 
 

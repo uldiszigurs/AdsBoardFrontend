@@ -5,10 +5,12 @@ const getCategoryPosts = (token, category) => dispatch => {
   axios
     .get(`/api/v1/post/category/${category}`, { headers: { authorization: `Bearer ${token}` } })
     .then(response => {
+      console.log('GET CATEGORY POSTS EXECUTED!')
       if (response && response.status === 200) {
+        console.log(response);
         dispatch({
-          type: "GET_CATEGORY_POSTS",
-          payload: response.data.payload.posts
+          type: "SET_CATEGORY",
+          payload: category
         });
         dispatch(
           success({
@@ -30,5 +32,11 @@ const getCategoryPosts = (token, category) => dispatch => {
       );
     });
 };
+const changeCategoryState = (category) => dispatch => {
+  dispatch({
+    type: "SET_CATEGORY",
+    payload: category
+  });
+}
 
-export { getCategoryPosts };
+export { getCategoryPosts, changeCategoryState };

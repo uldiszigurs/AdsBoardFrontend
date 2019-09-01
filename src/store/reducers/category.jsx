@@ -1,6 +1,6 @@
 const category = (state = "", action) => {
     switch (action.type) {
-        case "GET_CATEGORY" : 
+        case "SET_CATEGORY" : 
             return action.payload;
             
         default : return state;

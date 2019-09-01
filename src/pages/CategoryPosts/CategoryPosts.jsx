@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import Post from '../../components/Post';
 import PropTypes from 'prop-types';
-import CategoryPostsForm from '../../components/CategoryPostsForm';
+import SingleFormComponent from '../../components/SingleFormComponent';
 
 class CategoryPosts extends Component {
   state = {
-    category : ""
+    category : this.props.category || this.props.match.params.category
   }
+
   componentDidMount() {
-    if (this.state.category) {this.props.getCategoryPosts(this.props.user.token, this.props.match.params.category);}
-    console.log(this.props.categoryPosts);
-    console.log('TOKEN = ',this.props.user.token);
+    if (this.state.category) {
+
+    }
+    console.log (this.props);
+    this.props.changeCategoryState(this.state.category || this.props.match.params.category);
+    if (this.props.category) {this.props.getCategoryPosts(this.props.token, this.props.match.params.category || this.state.category);}
   }
   onChange = event => {
     const { name, value } = event.target;
@@ -19,49 +23,51 @@ class CategoryPosts extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    if (this.state.category.length < 1) {
-      console.log("Must be not null!");
-      return;
+    if (!this.state.category) { //additional check to not look for property in category if category is null.
+      if (this.state.category.length < 1) {
+        console.log("Must be not null");
+        return;
+      }
     }
-    this.props.getCategoryPosts(this.props.user.token, this.state.category);
+    this.props.changeCategoryState(this.state.category || this.props.match.params.category);
+    this.props.getCategoryPosts(this.props.token, this.state.category);
   }
 
   render() { 
-    const categoryPosts = this.props.categoryPosts; //FIXME: CAREFUL
-    console.log(categoryPosts);
-    console.log(this.props);
+    const categoryPosts = this.props.categoryPosts;
+    const category = this.props.category || this.state.category;
+    console.log('CATEGORY = ',category);
     return ( 
       <React.Fragment>
-      <CategoryPostsForm onChange = {this.props.onChange} onSubmit = {this.props.onSubmit}/>
-      {categoryPosts.map((item) => {
-        const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
-        return (
-          <Post 
-          category={category} 
-          createdAt={createdAt}
-          description={description}
-          title={title}
-          updatedAt={updatedAt}
-          username={username}
-          __v={__v}
-          _id={_id}
-          key={_id}
-          />
-        );
-      }) }
+        <SingleFormComponent inputName = {'category'} onChange = {this.onChange} onSubmit = {this.onSubmit}/>
+        {!(categoryPosts === []) ? 
+          categoryPosts.map((item) => {
+          const {category, createdAt, description, title, updatedAt, username, __v, _id} = item;
+          return (
+            <Post 
+            category={category} 
+            createdAt={createdAt}
+            description={description}
+            title={title}
+            updatedAt={updatedAt}
+            username={username}
+            __v={__v}
+            _id={_id}
+            key={_id}
+            />
+          );
+        }) : null}
+        {
+          category ? <p>Sorry, there are no posts with this category name</p> : null
+        }
     </React.Fragment>
     );
   }
 }
 CategoryPosts.propTypes = {
-  category : PropTypes.string,
-  _id : PropTypes.string,
-  username : PropTypes.string,
-  title : PropTypes.string,
-  createdAt : PropTypes.string,
-  updatedAt : PropTypes.string,
-  description : PropTypes.string,
-  key : PropTypes.string
+  token: PropTypes.string,
+  categoryPosts: PropTypes.array,
+  category: PropTypes.string
 }
 
 

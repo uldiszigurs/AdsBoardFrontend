@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const CategoryPostsForm = (props) => {
   //console.log(props);
   const {onSubmit,onChange} = props;
