@@ -2,15 +2,16 @@ import axios from "axios";
 import { success, error } from "react-notification-system-redux";
 
 const getCategoryPosts = (token, category) => dispatch => {
-  axios
+  try {
+    axios
     .get(`/api/v1/post/category/${category}`, { headers: { authorization: `Bearer ${token}` } })
     .then(response => {
       console.log('GET CATEGORY POSTS EXECUTED!')
       if (response && response.status === 200) {
         console.log(response);
         dispatch({
-          type: "SET_CATEGORY",
-          payload: category
+          type: "GET_CATEGORY_POSTS",
+          payload: response.data.payload.posts
         });
         dispatch(
           success({
@@ -22,15 +23,16 @@ const getCategoryPosts = (token, category) => dispatch => {
         );
       }
     })
-    .catch(err => {
-      dispatch(
-        error({
-          title: "FETCHING CATEGORY_POSTS FAILED! ",
-          message: err.response.error,
-          position: "tc"
-        })
-      );
-    });
+  } catch (error){
+    dispatch(
+      error({
+        title: "FETCHING CATEGORY_POSTS FAILED! ",
+        message: error.response.error,
+        position: "tc"
+      })
+    );
+  }
+  
 };
 const changeCategoryState = (category) => dispatch => {
   dispatch({
