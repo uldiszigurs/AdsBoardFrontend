@@ -23,11 +23,11 @@ const getCategoryPosts = (token, category) => dispatch => {
         );
       }
     })
-  } catch (error){
+  } catch (err){
     dispatch(
       error({
         title: "FETCHING CATEGORY_POSTS FAILED! ",
-        message: error.response.error,
+        message: err.response.error,
         position: "tc"
       })
     );
