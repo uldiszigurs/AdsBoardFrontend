@@ -16,14 +16,14 @@ axios.interceptors.response.use(
     let message,
       title = "Something went wrong";
     if (!error.response) {
-      console.log('error.response is falsy'); //
+      console.log('error.response is falsy, response was not provided probably'); //
     }
     //for debuging purposes some console.logs : causes crash even with new if : ((error.response && error.response.status === 401))
     // even I thought it wont check second expression when && first is false
     console.log("error = ", error);
     console.log("error.response = ", error.response);
     console.log("error.response.status = ", error.response.status);
-    if (error.response && error.response.status === 401) { // with only (error.response.status === 401) causes crash after some time being idle, when error/error.response is undefined. FIXME: 
+    if (error.response.status === 401) { //causes crash after some time being idle, when error/error.response is undefined. FIXME: 
      //STILL CAUSES CRASH
 
       localStorage.removeItem("user");
