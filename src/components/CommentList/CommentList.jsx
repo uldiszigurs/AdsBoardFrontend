@@ -41,8 +41,6 @@ state = {
 
   render() { 
     const comments = this.props.comments;
-    //HOTFIX DIRTY for unique keys
-    
 
     return ( 
       <React.Fragment>

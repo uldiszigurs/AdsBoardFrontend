@@ -9,10 +9,10 @@ class CategoryPosts extends Component {
   }
 
   componentDidMount() {
-    console.log (this.props);
+    //console.log (this.props);
     this.props.changeCategoryState(this.props.match.params.category);
     this.props.getCategoryPosts(this.props.token, this.props.match.params.category);
-    console.log('this.props.match.params.category = ',this.props.match.params.category);
+    //console.log('this.props.match.params.category = ',this.props.match.params.category);
   }
   onChange = event => {
     const { name, value } = event.target;
@@ -34,7 +34,7 @@ class CategoryPosts extends Component {
   render() { 
     const categoryPosts = this.props.categoryPosts;
     const category = this.props.match.params.category
-    console.log('CATEGORY = ',category);
+    //console.log('CATEGORY = ',category);
     return ( 
       <React.Fragment>
         <SingleFormComponent inputName = {'category'} onChange = {this.onChange} onSubmit = {this.onSubmit}/>

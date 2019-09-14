@@ -6,16 +6,16 @@ const getCategoryList= () => dispatch => {
     axios
     .get(`/api/v1/category/`) //FIXME: decide the route on backend
     .then(response => {
-      //console.log('GET CATEGORY NAMES EXECUTED!');
+      
       if (response && response.status === 200) {
         dispatch({
-          type: "GET_CATEGORY_NAMES",
-          payload: response.data.categoryList
+          type: "GET_CATEGORY_LIST",
+          payload: response.data.payload.categoryList
         });
         dispatch(
           success({
-            title: "Successfully fetched all category names",
-            message: "Successfully fetched all category names",
+            title: "Successfully fetched all category list",
+            message: "Successfully fetched all category list",
             position: "tr",
             autoDismiss: 5
           })
@@ -25,7 +25,7 @@ const getCategoryList= () => dispatch => {
   } catch (err){
     dispatch(
       error({
-        title: "FETCHING CATEGORY_NAMES FAILED! ",
+        title: "FETCHING CATEGORY_LIST FAILED! ",
         message: err.response.error,
         position: "tc"
       })

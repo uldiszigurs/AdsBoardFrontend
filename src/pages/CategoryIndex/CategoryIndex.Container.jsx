@@ -6,7 +6,7 @@ import CategoryIndex from "./CategoryIndex";
 const stateToProps = state => {
   return (
     {
-      categoryList: state.categoryPosts,
+      categoryList: state.categoryList,
     }
   );
 };

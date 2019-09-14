@@ -44,7 +44,7 @@ const Navigation = ({ user, singlePostId, category, logout }) => { //_ID = singl
         </li>
         ) : null}
         <li className='nav-item'>
-          <Link to={`/category/${category}`}className='nav-link'>
+          <Link to={`/category`}className='nav-link'>
             CategoryPosts
           </Link>
         </li>

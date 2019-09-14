@@ -9,6 +9,7 @@ import categoryPosts from './categoryPosts';
 import singlePost from './singlePost';
 import createdPostId from './createdPostId';
 import category from './category';
+import categoryList from './categoryList';
 
 
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   userPosts,
   category,
   categoryPosts,
+  categoryList,
   comments,
   createdPostId,
   singlePost,

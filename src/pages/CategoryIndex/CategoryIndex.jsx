@@ -9,14 +9,17 @@ class CategoryIndex extends Component {
   }
 
   render() { 
-    const categoryList = this.props.match.params.category
+    const categoryList = this.props.categoryList;
+
     return ( 
       <React.Fragment>
         {/* TODO: Alphabetical order or smthing to navigate faster */}
         {
-          categoryList.map((item) => {
+          categoryList.map((category) => {
             return (
-              <Link to = {`/category/${item}`}>{item}</Link>
+              <div className = 'm-2 border border-warning' key = {category}>
+                <Link to = {`/category/${category}`} >{category}</Link>
+              </div>
             );
           })
         }
@@ -25,7 +28,7 @@ class CategoryIndex extends Component {
   }
 }
 CategoryIndex.propTypes = {
-  categoryPosts: PropTypes.array,
+  categoryList: PropTypes.array,
 }
 
 

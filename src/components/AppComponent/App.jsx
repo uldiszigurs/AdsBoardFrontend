@@ -11,20 +11,20 @@ import NotificationSystem from "../NotificationComponent";
 import Navigation from "../Navigation";
 import PrivateRoute from "../PrivateRoute";
 import CategoryPosts from "../../pages/CategoryPosts";
-
-
+import CategoryIndex from "../../pages/CategoryIndex";
 
 
 
 
 const App = ({ user, singlePostId, logout }) => {
   return (
-    <Fragment>
+   <Fragment>
       <Router>
         <Navigation user={user} singlePostId = {singlePostId} logout={logout} />
         <Switch>
-        <Route path='/register' component={Registration} />
+          <Route path='/register' component={Registration} />
           <Route path='/category/:category' component={CategoryPosts} />
+          <Route path='/category' component={CategoryIndex} exact/>
           <Route path='/login' component={Login} />
           <Route path='/posts' component={Posts} />
           <Route path='/createpost' component={CreatePost} />

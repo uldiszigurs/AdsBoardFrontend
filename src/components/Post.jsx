@@ -16,7 +16,7 @@ const Post = (props) => {
                     <div className = 'p-2'><Link to = {`/post/${_id}`}>{title}</Link></div>
                     <div className = 'p-2'>Posted by user : {username}</div>
                     <div className = 'p-2'>Description : {description}</div>
-                    <div className = 'p-2'>Category : {category}</div>
+                    <div className = 'p-2'><Link to = {`/category/${category}`}>{category}</Link></div>
                      <div className = 'p-2'>CreatedAt : {createdAt}</div>
                     {/*<div className = 'p-2'>{updatedAt}</div> */}
                 </div>
